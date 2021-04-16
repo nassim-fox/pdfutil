@@ -1,0 +1,1 @@
+web: gunicorn pdfutil.wsgi --log-file -
