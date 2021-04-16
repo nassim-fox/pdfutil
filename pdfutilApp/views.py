@@ -29,8 +29,9 @@ class FileUploadView(views.APIView):
         im = request.data['file']
         
         
+        print(os.listdir()) 
         
-        folder = 'static/ims'
+        folder = 'pdfutilApp/static/ims'
 
         img_save_path = folder+'/'+filename
         with open(img_save_path, 'wb+') as f:
@@ -48,12 +49,12 @@ class ImageToPdfView(views.APIView) :
     def get(self,request,filename) : 
         
         
-        folder = 'static/ims'
+        folder = 'pdfutilApp/static/ims'
 
         img_save_path = folder+'/'+filename
-        pdfpath = os.path.splitext('static/ims/'+filename)[0]+'.pdf'
+        pdfpath = os.path.splitext('pdfutilApp/static/ims/'+filename)[0]+'.pdf'
 
-        image1 = Image.open(r'static/ims/'+filename)
+        image1 = Image.open(r'pdfutilApp/static/ims/'+filename)
         im1 = image1.convert('RGB')
         im1.save(pdfpath)
         
