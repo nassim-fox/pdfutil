@@ -15,6 +15,7 @@ urlpatterns = [
     path('',include(router.urls)), 
     path('api-auth/',include('rest_framework.urls',namespace="rest_framework")),
     url(r'^upload/(?P<filename>[^/]+)$', views.FileUploadView.as_view()),   
-    url(r'^imTopdf/(?P<filename>[^/]+)$', views.ImageToPdfView.as_view())
+    url(r'^imTopdf/(?P<filename>[^/]+)$', views.ImageToPdfView.as_view()),   
+    url(r'^pdfToim/(?P<filename>[^/]+)$', views.PdfToImageView.as_view())
    # path('upload/<filename>', views.FileUploadView,"file")
 ]
